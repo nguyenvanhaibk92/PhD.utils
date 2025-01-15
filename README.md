@@ -75,7 +75,9 @@ Host ls6-jax-ai-stack
   User <YOUR_TACC_ACCOUNT_NAME>
   RequestTTY yes
 ```
-NOTE: you might need to check `/opt/apps/tacc-apptainer/1.3.3/bin/apptainer` path since TACC might update in the future.
+NOTE: 
+- you might need to check `/opt/apps/tacc-apptainer/1.3.3/bin/apptainer` path since TACC might update in the future.
+- you need to select "Enable Remote Command" in the Remote-SSH extension settings in Visual Studio Code.
 
 5. Open the command palette (Ctrl+Shift+P) and type "Remote-SSH: Connect to Host..." and choose "ls6-jax-ai-stack"
 
@@ -84,5 +86,5 @@ NOTE: you might need to check `/opt/apps/tacc-apptainer/1.3.3/bin/apptainer` pat
 7. Enjoy! Navigate to you project folder and start coding!
 
 ---
-#### You can build/rebuild your own docker image depends on what you want to install further. I provided several Dockerfiles in the repository. 
+<!-- #### You can build/rebuild your own docker image depends on what you want to install further. I provided several Dockerfiles in the repository.  -->
 
