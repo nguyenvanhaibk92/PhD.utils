@@ -1,0 +1,10 @@
+**/*.npy
+**/__pycache__/
+**/argue*
+**/models/*
+**/Submit_schedule*
+**/Overleaf
+**/wandb/
+!**/models/.gitkeep
+
+
