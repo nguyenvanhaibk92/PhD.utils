@@ -1,4 +1,13 @@
-## All you need to know to present your life (by Hai Nguyen in Pho Group - UT austin)
+## All you need to present your work (by Hai Nguyen in Pho Group - UT austin)
+
+## Why you need this?
+
+- Beamer in LaTeX is the best to a lot of things, but it is not easy to deal with videos, animations, etc. and rearrangements.
+- PowerPoint is the best to deal with videos, animations, etc. but it is not easy to deal with math expressions, etc.
+
+- Can we instantly update the latex slides in PowerPoint? Yes, we can! Then, you can take the best of both worlds.
+
+## Description
 This is the folder to show you all how to organize files to use the best features of Beamer in LaTeX and PowerPoint
 
 - nice math expressions
