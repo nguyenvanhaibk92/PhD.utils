@@ -1,0 +1,23 @@
+\frame{\frametitle{Motivation}
+    \bluebox{Time-dependent scalar PDE equation}{
+        \begin{equation}
+            \eqnlab{eq_base}
+            \pp{u}{t} = \mc{G}\LRp{u, \Grad u, \hdots} \quad \text{ in } \Omega \subset \R^\d,
+            %\LRp{u, \pp{u}{x}, \pp{u^2}{x^2}, u\pp{u}{x} , \hdots}, 
+        \end{equation}
+        where $t \in (0,T]$, $u\LRp{\xb} \in \R$ for any $\xb \in \R^d$, and $\d \in \LRc{1,2,3}$.
+        %, also equipped with appropriate initial conditions and boundary conditions.
+    }
+    \pause
+    \bluebox{Traditional methods, Using method of Lines}{
+        \begin{equation}
+            \eqnlab{MoLines}
+            \pp{\ub}{t} =  \F \LRp{\ub},
+        \end{equation}
+        where \myblue{$\ub$ and $\F$ are vector representations of finite dimensional
+            approximations of $\u$ and $\mc{G}$}, respectively.
+    }
+    % \pause
+    % \centering
+    % \mygreen{mcTangent learns $\F$ from data,  constrained by \eqnref{MoLines}}
+}

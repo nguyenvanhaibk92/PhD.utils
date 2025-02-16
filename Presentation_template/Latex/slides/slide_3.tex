@@ -1,0 +1,65 @@
+\frame{
+\frametitle{Pho-DT Framework}
+\def\height{1.35cm}
+\def\width{2.cm}
+\def\angle{0}
+\usetikzlibrary{shapes.multipart}
+
+\def\height{2.5cm}
+\def\width{1.8cm}
+\def\angle{45}
+
+\begin{center}
+    
+\begin{tikzpicture}[
+    cross/.style={path picture={ \draw[black, shorten <=1pt, shorten >=1pt, line width=.5pt] (path picture bounding box.south) -- (path picture bounding box.north); \draw[black, shorten <=1pt, shorten >=1pt, line width=.5pt] (path picture bounding box.west) -- (path picture bounding box.east);}}
+    ]
+% Figures shapes
+    \draw[shift={(0*\width,0*\height)}, rotate around={\angle:(0,0)}, color = blue, line width=1, fill=blue!20](0,0) circle [radius=\height/2] {};
+    \draw[shift={(3.5*\width,0*\height)}, rotate around={0:(0,0)}, color = blue, line width=1, shift={(0,-0)}, fill=blue!20](0,0) ellipse (\height/1.5 and \height/4) {};
+
+    \draw[shift={(-0*\width,2*\height)}, rotate around={-\angle:(0,0)}, color = blue, line width=1, shift={(0,0)}, fill=blue!20] (0,0) ellipse (\height/2 and \height/2)  {};
+    
+    \draw[shift={(3.5*\width,2*\height)}, rotate around={\angle:(0,0)}, color = blue, line width=1, shift={(0,0)}, fill=blue!20] (0,0) ellipse (\height/1.5 and \height/4) {};
+
+% Texts
+    \node[draw = none] at (1.75*\width, -0.4 * \height) () {$\A = V \Sigma  U^T$};
+
+% Lines arrows
+    \draw[->, line width = 1pt, rotate around={-\angle:(0,0)}, color = red](0,0)-- (\height/2,0);
+    \draw[->, line width = 1pt, rotate around={-\angle:(0,0)}, color = green](0,0)-- (0, \height/2);
+
+    \draw[->, line width = 1pt, color = red](0,2*\height)-- (\height/2,2*\height);
+    \draw[->, line width = 1pt, color = yellow](0,2*\height)-- (0, 2.5*\height);
+
+    \draw[->, line width = 1pt, rotate around={-\angle/3:(3.5*\width,0)}, color = red](3.5*\width,0)-- (3.5*\width + \height/1.8,0);
+    \draw[->, line width = 1pt, rotate around={-\angle/1.5:(3.5*\width,0)}, color = yellow](3.5*\width,0)-- (3.5*\width, \height/3.6);
+
+    \draw[->, shift={(3.5*\width,2*\height)}, line width = 1pt, rotate around={\angle/1.5:(0,0)}, color = red](0,0)-- (\height/1.8,0);
+    \draw[->, shift={(3.5*\width,2*\height)},line width = 1pt, rotate around={\angle/3:(0,0)}, color = yellow](0,0)-- (0, \height/3.6);
+    
+    \draw[-, line width = 1pt, color = black](3.5*\width,0) -- node[above, color = black] {$\sigma_1$} (3.5*\width + \height/1.5, 0) ;
+
+    \draw[-, line width = 1pt, color = black](3.5*\width,0) -- node[left, color = black] {$\sigma_2$} (3.5*\width, \height/4) ;
+
+    \draw[-, shift={(3.5*\width,2*\height)}, line width = 1pt, rotate around={\angle:(0,0)}, color = black](0,0) -- node[above, color = black] {$\sigma_1$} (\height/1.5,0);
+
+    \draw[-, shift={(3.5*\width,2*\height)}, line width = 1pt, rotate around={\angle:(0,0)}, color = black](0,0) -- node[left, xshift=0.2ex, yshift=-1.4ex , color = black] {$\sigma_2$} (0,\height/4);
+
+    
+    \draw[->, line width = 1pt, color = black](0, 1.4*\height)--  node[right, color = black] {$U^T$}  (0, 0.6 * \height);
+
+    \draw[->, line width = 1pt, color = black](3.5*\width, 0.6*\height)--  node[right, color = black] {$V$}  (3.5*\width, 1.4 * \height);
+
+    \draw[->, line width = 1pt, color = black](0.6*\height, 0)--  node[above, color = black] {$\Sigma$}  (3.5*\width - \height/1.5 - 0.1 * \height, 0);
+
+    \draw[->, line width = 1pt, color = black](0.6*\height, 2*\height)--  node[above, color = black] {$\A$}  (3.5*\width - \height/1.5 - 0.1 * \height, 2*\height);
+    
+
+\end{tikzpicture}
+\end{center}
+
+
+
+
+}

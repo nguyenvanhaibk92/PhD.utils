@@ -1,0 +1,30 @@
+\documentclass[mathserif]{beamer}
+
+% Set up root path as macro
+\makeatletter
+\def\@rootpath{/Users/hainguyenvan/Desktop/Github_Clone/PhD.utils/Presentation_template/Latex/}
+\newcommand{\fromroot}[1]{\@rootpath#1}
+\def\input@path{{\@rootpath}}
+
+% Define graphics path using the root path macro
+\usepackage{graphicx}
+\makeatletter
+\newcommand{\setgraphicspath}{%
+    \graphicspath{{\@rootpath}}%
+}
+\makeatother
+
+% Call the macro to set graphics path
+\setgraphicspath
+
+% Input template using fromroot command
+\input{\fromroot{template/template_1.tex}}
+
+\begin{document}
+
+% Input slides using fromroot command
+\input{\fromroot{slides/slide_1.tex}}
+\input{\fromroot{slides/slide_2.tex}}
+\input{\fromroot{slides/slide_3.tex}}
+
+\end{document}

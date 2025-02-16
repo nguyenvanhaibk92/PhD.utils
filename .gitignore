@@ -6,5 +6,19 @@
 **/Overleaf
 **/wandb/
 !**/models/.gitkeep
-
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.fls
+**/*.log
+**/*.gz
+**/*.thm
+**/*.fdb_latexmk
+**/*.out
+**/*.toc
+**/*.upa
+**/*.snm
+**/*.xml
+**/*.nav
+**/*.bcf
 
