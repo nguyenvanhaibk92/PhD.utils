@@ -1,5 +1,7 @@
 # Running Local Jupyter Notebook Browse with TACC resources
 
+(With help from Yuchen Zhang)
+
 This guide explains how to run a Jupyter Notebook server on a TACC (Texas Advanced Computing Center) supercomputer and connect to it from your local machine.
 
 ## Step 1: Connect to the TACC Login Node
