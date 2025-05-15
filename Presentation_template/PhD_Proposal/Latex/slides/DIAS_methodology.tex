@@ -1,0 +1,29 @@
+\frame{
+\frametitle{Methodology}
+\vspace{-1ex}
+\bluebox{DIAS key steps}
+{
+\begin{enumerate}
+    \item Finding the inactive subspace. 
+    
+    \begin{itemize}
+        \item We define a function 
+    
+        \[f(\ub) = \nor{G\ub - \yb}_{\ycovinv}^2\]
+
+        \item Calculate the covariance matrix 
+        
+        \[
+        C = \int \nabla_{\ub} f(\ub) \LRp{\nabla_{\ub} f(\ub)}^T \rho(\ub) d\ub, \quad \quad \rho(\ub) \sim \mc{N}\LRp{\ub_0, \Gamb}
+        \]
+        \item Eigen-decomposition of $C$ for active subspace $\W_1$  and inactive subspace $\W_2$.
+    \vspace{-2ex}
+    \[ C = \W D \W^T \quad \implies \quad \LRs{\W_1 \, \W_2} = \LRs{\underbrace{\W[:r]}_{\text{top r}} \quad \underbrace{\W[r:]}_{\text{remaining}}} \]
+    \end{itemize}
+    \vspace{-4ex}
+    \item Solving the the optimization problem
+    \[\ub^* = \min_{\ub} \, \half \nor{G\ub - \yb}_{\ycovinv}^2  + \halfv{\lambda} \nor{\W_2^T \ub}_{\LRp{\W_2^T \Gamb \W_2}^{-1}}^2 \]
+\end{enumerate}
+}
+
+}

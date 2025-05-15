@@ -1,0 +1,33 @@
+\frame{
+\frametitle{TAEN: Tikhonov Autoencoder Network}
+\vspace{-1ex}
+
+{\small
+
+\bluebox{Loss function}{
+    In TAEN, we use the prior mean of PoI, $\mygreen{\ub_0}$, thus true PoI samples are no longer required. Given the training data ${\Y}$, we learn the encoder $\Psie$ and decoder $\Psid$ by optimizing:
+\begin{equation*}
+    \begin{aligned}
+\Psie^* = \min_{\Psie} & \halfv{1} \nor{\mygreen{\ub_0 \One^T} - \Psie\LRp{{\Y}}}_{F}^2 + \halfv{\lambda}\nor{{\Y} - \B \circ \G\LRp{\Psie\LRp{{\Y}}}}_{F}^2, \\ 
+        \Psid^* = \min_{\Psid} & \halfv{1} \nor{\G\LRp{\Psie^*\LRp{{\Y}}} -\Psid\LRp{\Psie^*\LRp{{\Y}}}}_{F}^2.
+    \end{aligned}
+\end{equation*}
+}
+
+\vspace{1ex}
+
+\bluebox{Analyzing with linear problems}{
+    To gain insights, we analyze \texttt{TAEN} approach with linear problems, i.e., $\G$ is a linear map, using linear autoencoder networks, i.e., $Z = \Psie \LRp{\P} = \textcolor{red}{\W_e} U + \textcolor{red}{\bb_e} \One^T$ and $\Psid\LRp{Z} = \myblue{\W_d} Z + \myblue{\bb_d} \One^T$. Then, we have
+
+\begin{equation*}
+    \eqnlab{TNetAElinear}
+    \begin{aligned}
+        {\textcolor{red}{\W_e}^*, \textcolor{red}{\bb_e}^*} = & \min_{\textcolor{red}{\W_e}, \textcolor{red}{\bb_e}} \halfv{1} \nor{\ub_0 \One^T - \LRp{\textcolor{red}{\W_e} {\Y}+ \textcolor{red}{\bb_e} \One^T}}_{F}^2
+        + \halfv{\lambda}\nor{{\Y}- \GB\LRp{\textcolor{red}{\W_e} {\Y}+ \textcolor{red}{\bb_e} \One^T}}_{F}^2, \\
+        {\myblue{\W_d}^*, \myblue{\bb_d}^*} = & \min_{\myblue{\W_d}, \myblue{\bb_d}} \halfv{1} \nor{\GB\LRp{\textcolor{red}{\W_e}^* {\Y}+ \textcolor{red}{\bb_e}^* \One^T} - \LRp{\myblue{\W_d}\LRp{\textcolor{red}{\W_e}^* {\Y}+ \textcolor{red}{\bb_e}^* \One^T} + \myblue{\bb_d}^* \One^T}}_{F}^2.
+    \end{aligned}
+\end{equation*}
+}
+
+}
+}

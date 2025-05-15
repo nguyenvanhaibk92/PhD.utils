@@ -1,0 +1,31 @@
+\frame{
+\frametitle{Naive Autoencoder ($\pureOPO$) - error estimation}
+\vspace{-3ex}
+{\small
+Given a dataset of pairs $\LRc{\P, \Y}$, we can learn forward and inverse surrogate models by 
+\begin{equation*}
+    \begin{aligned}
+        & \text{first optimizing the encoder} & \Psie^* = & \min_{\Psie} \halfv{1} \nor{\Psie\LRp{\Y} - \P}_{F}^2, \\ 
+        & \text{then decoder with pre-trained encoder}  & \Psid^* = & \min_{\Psid}  \halfv{1} \nor{\Psid\LRp{\Psie^*\LRp{\Y}} - \Y}_{F}^2.
+    \end{aligned}
+\end{equation*}
+
+Applying 1st optimality condition for the optimal solutions $\Psie^*$ and $\Psid^*$, we have  
+\begin{itemize}
+    \item \myred{test inverse solution error}
+    \[
+        \epsb_{\ubtest}^{\pureOPO} = \nor{\Psie^*(\ybtest) - \ubtest }_2^2 = \nor{ \LRp{\bar{\P} \bar{\Y}^\dagger \GB -\Ib} \LRp{\ubtest - \bar{\ub}}}_2^2.
+    \]
+    \item \myred{test forward solution error}, with $Z = \Psie^*(\Y)$ is the encoder inverse solution, 
+    \[
+    \epsb_{\ybtest}^{\pureOPO} = \nor{\Psid^*(\ubtest) - \ybtest }_2^2  = \nor{\bar{\Y} \myblue{\LRp{\bar{Z}^{\dagger} - \bar{\P}^\dagger}} \LRp{\ubtest - \bar{\ub}}}_2^2 \myblue{> 0}, \]
+    % where $\bar{\ub} = \frac{\P \One}{n_t}$ is the average of PoI samples, and $\bar{\P} = \P - \bar{\ub}\One^T$ is the centralized data, \\
+    % \quad \quad \quad $Z = \Psie^*(\Y)$ is the encoder inverse solution.
+\end{itemize}
+}
+}
+
+
+
+
+

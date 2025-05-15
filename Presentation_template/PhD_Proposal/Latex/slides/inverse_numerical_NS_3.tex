@@ -1,0 +1,66 @@
+\frame{
+\frametitle{2D Navier--Stokes equation: predictions with 1 training sample}
+
+% \begin{figure}[htb!]
+%     \centering
+%     % \caption{{\bf 2D heat equation.} A (random) representative case of inverse and full forward solution obtained by $\TNetAE$ trained with 1 training sample coupled with data randomization of noise level $\sigma = 0.1$. $\TNetAE$ inverse solution is comparable to the Tikhonov (Tik) inverse counterpart, and both are consistent with the ground truth (True). $\TNetAE$ full forward solution is almost identical (in fact within 3 digits of accuracy) to the underlying true solution.}
+%     \resizebox{.8\textwidth}{!}{
+%         \begin{tabular*}{\textwidth}{c@{\hskip -0.01cm} c@{\hskip -0.01cm} c@{\hskip -0.01cm} c@{\hskip -0.01cm}}
+%             \centering
+%             \raisebox{-0.5\height}{$\ub_\text{Tikhonov}$} &
+%             \raisebox{-0.5\height}{$\ub_{\TNetAE}$ } &
+%             \raisebox{-0.5\height}{$\ub_\text{True}$}&
+%             \raisebox{-0.5\height}{$\omb_{\TNetAE}$}
+%             \\
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tik_test_sample_POI_sample.pdf}} &
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_test_1sample_POI_sample.pdf}} &
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/True_test_sample_POI_sample.pdf}} &
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_test_1sample_yobs_sample.pdf}}
+%             \\
+%             \raisebox{-0.5\height}{$\snor{\ub_\text{Tikhonov} - \ub_\text{True}}$} &
+%             \raisebox{-0.5\height}{$\snor{\ub_{\TNetAE} - \ub_\text{True}}$ } &
+%             \raisebox{-0.5\height}{$\omb_\text{True}$}&
+%             \raisebox{-0.5\height}{$\snor{\omb_{\TNetAE} - \omb_\text{True}}$}
+%             \\
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tik_test_error_sample_POI_sample.pdf}} &
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_test_error_1sample_POI_sample.pdf}} &
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/True_test_1sample_yobs_sample.pdf}} &
+%             \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_error_test_1sample_yobs_sample.pdf}}
+%         \end{tabular*}
+%     }
+% \end{figure}
+
+\begin{figure}[htb!]
+    \centering
+    % \caption{{\bf 2D heat equation.} A (random) representative case of inverse and full forward solution obtained by $\TNetAE$ trained with 1 training sample coupled with data randomization of noise level $\sigma = 0.1$. $\TNetAE$ inverse solution is comparable to the Tikhonov (Tik) inverse counterpart, and both are consistent with the ground truth (True). $\TNetAE$ full forward solution is almost identical (in fact within 3 digits of accuracy) to the underlying true solution.}
+    \resizebox{1.\textwidth}{!}{
+    \begin{tabular*}{1.27\textwidth}{c@{\hskip -0.01cm} c@{\hskip -0.01cm} c@{\hskip -0.01cm} c@{\hskip -0.01cm} c@{\hskip -0.01cm}}
+        \centering
+        \raisebox{-0.5\height}{$\ub_\text{Tikhonov}$} &
+        \raisebox{-0.5\height}{$\ub_{\TNetAE} = \Psi_e^*(\yb)$} &
+        \raisebox{-0.5\height}{$\ub_\text{True}$}&
+        \raisebox{-0.5\height}{$\omb_\text{True}$}&
+        \raisebox{-0.5\height}{$\omb_{\TNetAE}= \Psi_d^*\LRp{\ub_\text{True}}$}
+        \\
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tik_test_sample_POI_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_test_1sample_POI_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/True_test_sample_POI_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/True_test_1sample_yobs_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_test_1sample_yobs_sample.pdf}}
+        \\
+        \raisebox{-0.5\height}{$\snor{\ub_\text{Tikhonov} - \ub_\text{True}}$} &
+        \raisebox{-0.5\height}{$\snor{\ub_{\TNetAE} - \ub_\text{True}}$ } &
+        \raisebox{-0.5\height}{$u(x)$ at T = 0}  & 
+        \raisebox{-0.5\height}{$\omega(x)$ at T = 10} &
+        \raisebox{-0.5\height}{$\snor{\omb_{\TNetAE} - \omb_\text{True}}$}
+        \\
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tik_test_error_sample_POI_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_test_error_1sample_POI_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/True_train_sample_POI_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/True_train_sample_yobs_sample.pdf}} &
+        \raisebox{-0.5\height}{\includegraphics[width = 0.25\textwidth]{Figs/Figs/2D_NS/Tnet_full_error_test_1sample_yobs_sample.pdf}}
+    \end{tabular*}
+    }
+\end{figure}
+
+}

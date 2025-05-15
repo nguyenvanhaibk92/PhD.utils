@@ -1,0 +1,28 @@
+\frame{
+\frametitle{Problem settings}
+\vspace{-6ex}
+% \bluebox{Problem settings}
+{\small
+We consider 
+\begin{itemize}
+    \item The linear forward problem
+    \begin{equation*}
+        \yb = B \circ \underbrace{G \ub}_{\omb} + \delta,
+    \end{equation*}
+    where $B$ is observational operator, $G$ is linear forward map, and $\delta$ is white noise. 
+    
+    \item The equivalent linear inverse problem
+    \begin{equation*}
+        \ub = \LRp{B \circ G}^\dagger \yb = {\GB}^\dagger \yb.
+    \end{equation*}
+\end{itemize}
+
+We want to learn linear autoencoder surrogate models 
+\begin{itemize}
+    \item Encoder $\Psie(\yb) = \W_e \yb + \bb_e$ for inverse map ${\GB}^\dagger$.
+    \item Decoder $\Psid(\ub) = \W_d \ub + \bb_d$ for forward map $G$ or PtO map $G^B$.
+\end{itemize}
+
+}
+
+}

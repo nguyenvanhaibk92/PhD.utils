@@ -1,0 +1,32 @@
+\frame{
+\frametitle{2D Navier--Stokes equation: relative error}
+
+\bluebox{Relative error over 500 test samples ($\epsilon = 0.25$)}
+{
+\begin{table}[htb!]
+    \centering
+    % \caption*{Relative error over 500 test samples ($\epsilon = 0.25$)}
+    \begin{tabular}{c|rr|rr}
+        \hline
+                          & \multicolumn{2}{c|}{\textbf{1 training sample}} & \multicolumn{2}{c}{\textbf{100 training samples}}                                       \\
+        \textbf{Approach} & \textbf{Inverse} (\%)                                & \textbf{Forward}                                  & \textbf{Inverse} (\%) & \textbf{Forward} \\
+        \hline
+        $\pureOPO$        & 103.94                                          & 5.60                                                           & 40.20            & 5.94 $\times 10^{-1}$         \\
+        $\mcOPO$          & 46.43                                           & 5.15 $\times 10^{-1}$                                          & 27.29            & 2.20 $\times 10^{-3}$         \\
+        $\TNetAE$         & \textcolor{red}{25.68}                                           & \textcolor{red}{2.14 $\times 10^{-3}$}                                          & 24.54            & 1.49 $\times 10^{-3}$         \\
+        Tikhonov               & 22.71                                           &                                                                & 22.71            &                  \\
+        \hline
+    \end{tabular}
+    \tablab{2D_Heat_accuracy_table}
+\end{table}
+}
+
+\vspace{3ex}
+
+\bluebox{Arbitrarily chosen samples for 1 training sample case}
+{
+    The statistic of inverse solution error over 12 cases 
+    \[ 25.88 \pm 0.19 \% \]
+}
+
+}

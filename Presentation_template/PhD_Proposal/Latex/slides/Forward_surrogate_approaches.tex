@@ -1,0 +1,29 @@
+\frame{
+\frametitle{Motivation}
+% \vspace{-10ex}
+\small
+\bluebox{Common machine learning approaches for solving PDEs}
+{    
+
+\begin{itemize}
+\item PINN [\myblue{Raissi M., 2019}]: solving for a case of dynamical
+\item Transformer [\myblue{Li Zijie, 2024}], Graph neural network [\myblue{Iakovlev, V. 2020}]: capturing spatial/temporal correlations at once directly mapping from $T_i$ to $T_{i+1}$
+\item Operator learning: FNO [\myblue{Li Z., 2020}], DeepONet [\myblue{Lu Lu, 2019}] directly mapping solutions from $T_0$ to $T_{end}$
+\item Neural ODE [\myblue{Chen, R. T., 2018}]/Recurrent neural network [\myblue{Mohajerin, N. 2019}] (most related to our work) learning right hand side (tangent slope/dynamical evolution) of dynamical systems, temporal correlation is taken into consideration by time integration scheme.
+
+\end{itemize}
+
+}
+
+\vspace{1ex}
+
+\orangebox{Limitations}
+{
+    \begin{itemize}
+        \item Inference stability, long-term prediction capacity due to inference error accumulation.
+        \item Generalization to different scenarios (boundary conditions, geometry, invariant-discretization, ...)
+        \item Discontinuities/shocks evolution (limited research)
+    \end{itemize}
+}
+
+}

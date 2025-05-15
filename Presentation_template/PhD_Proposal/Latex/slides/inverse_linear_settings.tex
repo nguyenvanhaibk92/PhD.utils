@@ -1,0 +1,33 @@
+\frame{
+\frametitle{Problem settings}
+\small
+\vspace{-3ex}
+\bluebox{}
+{
+We consider 
+\begin{itemize}
+    \item The forward problem
+    \begin{equation*}
+        \yb = B \circ \underbrace{G (\ub)}_{\omb} + \, \delta,
+    \end{equation*}
+    where $B$ is observational operator, $G$ is forward map, and $\delta$ is white noise. 
+    
+    \item The equivalent inverse problem
+    \begin{equation*}
+        \ub = \LRp{B \circ G}^\dagger \yb = {\GB}^\dagger \yb.
+    \end{equation*}
+\end{itemize}
+}
+
+\vspace{5ex}
+
+\bluebox{}
+{
+    {\bf Task: }Given the observation data $\yb$, we want to learn autoencoder surrogate models 
+\begin{itemize}
+    \item Encoder $\Psie(\yb)$ for inverse map ${\GB}^\dagger$.
+    \item Decoder $\Psid(\ub)$ for forward map $G$.
+\end{itemize}
+}
+
+}

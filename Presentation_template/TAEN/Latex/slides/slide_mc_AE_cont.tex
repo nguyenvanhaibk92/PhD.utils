@@ -1,0 +1,22 @@
+\frame{
+\frametitle{Key issue of $\mcOPO$: Error estimation is data-dependent}
+Recall the test inverse solution error
+\[
+    \epsb_{\ubtest}^{\mcOPO} = \nor{\left(\Ib + \lambda {\GB}^T{\GB}\right)^{-1} \LRp{  \LRp{\textcolor{red}{\bar{\P} \bar{\Y}}^{\dagger} \GB - \Ib } \LRp{\ub^\text{test} - \textcolor{red}{\bar{\ub}}} } }_2^2 
+\]
+where 
+\begin{itemize}
+    \item $\textcolor{red}{\bar{\P}, \bar{\Y}}$ is centralized training data.
+    \item $\textcolor{red}{\bar{\ub}}$ is the average of training PoI samples.
+\end{itemize}
+
+\vspace{2ex}
+
+\myred{If training data $\P, \Y$ is limited, surrogate models heavily bias on given training data. \newline
+Hence, leading to high test inverse error.}
+
+\vspace{2ex}
+
+\myblue{Our TAEN approach is introduced to deal with this issue}
+}
+

@@ -1,0 +1,31 @@
+\frame{
+\frametitle{2D Heat equation: relative error}
+
+\bluebox{Relative error over 500 test samples ($\epsilon = 0.1$)}
+{\begin{table}[htb!]
+    \centering
+    % \caption*{Relative error over 500 test samples ($\epsilon = 0.1$)}
+    \begin{tabular}{c|rr|rr}
+        \hline
+                          & \multicolumn{2}{c|}{\textbf{1 training sample}} & \multicolumn{2}{c}{\textbf{100 training samples}}                                       \\
+        \textbf{Approach} & \textbf{Inverse} (\%)                                & \textbf{Forward}                                  & \textbf{Inverse} (\%) & \textbf{Forward} \\
+        \hline
+        $\pureOPO$        & 107.55                                          & 2.90$\times 10^{-1}$                                          & 50.18            & 1.09$\times 10^{-1}$         \\
+        $\mcOPO$      & 108.28                                          & 4.21$\times 10^{-2}$                                          & 46.32            & 4.56$\times 10^{-4}$         \\
+        $\TNetAE$         & \textcolor{red}{45.23}                                           & \textcolor{red}{1.57$\times 10^{-4}$}                                          & 45.03            & 1.22$\times 10^{-4}$         \\
+        Tikhonov               & 44.99                                           &                                                   & 44.99            &                  \\
+        \hline
+    \end{tabular}
+    \tablab{2D_Heat_accuracy_table}
+\end{table}
+}
+
+\vspace{3ex}
+
+\bluebox{Arbitrarily chosen samples for 1 training sample case}
+{
+    The statistic of inverse solution error over 10 cases 
+    \[ 45.32 \pm 0.32 \% \]
+}
+
+}

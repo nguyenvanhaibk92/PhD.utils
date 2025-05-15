@@ -1,0 +1,30 @@
+\frame{
+\frametitle{Train/test computational cost \& speed up for \TNetAE}
+
+\begin{table}[htb!]
+ \caption*{Train/Test computation cost \& Speed up for \TNetAE \\
+ Implemented on NVIDIA A100 GPUs (TACC)
+ }
+\centering
+\begin{tabular}{l|l|c|c}
+\hline
+\multicolumn{2}{l|}{} & {\bf Heat equation} & {\bf Navier--Stokes} \\
+\hline
+\multicolumn{2}{l|}{\makecell[l]{Training Encoder + Training Decoder \\ (hours)}} & 2 & 16 \\
+\hline
+\multirow{2}{*}{\makecell[l]{Test/Inference \\(second)}}
+& Inverse (Encoder) & $2.74 \times 10^{-4}$ & $2.93 \times 10^{-4}$ \\
+& Forward (Decoder) & $2.86 \times 10^{-4}$ & $3.06 \times 10^{-4}$ \\
+\hline
+\multirow{2}{*}{\makecell[l]{Numerical solvers\\(second)}}
+& Inverse (Tikhonov) & $4.36 \times 10^{-2}$ & 7.26 \\
+& Forward & $3.01 \times 10^{-2}$ & 0.38 \\
+\hline
+\multirow{2}{*}{Speed up}
+& Inverse & 159 & \myred{24,785} \\
+& Forward & 105 & \myred{1,241} \\
+\hline
+\end{tabular}
+\end{table}
+
+}

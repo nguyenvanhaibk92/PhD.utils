@@ -1,0 +1,24 @@
+\frame{\frametitle{\texttt{mcTangent}}
+    \framesubtitle{Model-constrained tangent slope learning approach}
+
+    \bluebox{Consider forward Euler with the exact and approximate tangent slopes}{
+        \[
+            \ui{i+1} = \ui{i} + \dt \, \F \LRp{\ui{i}}, \quad \textcolor{green}{\ut{i+1}} = \ut{i} + \dt \NN{\ut{i}},
+        \]
+    }
+    % \pause
+    \vspace{2ex}
+    \bluebox{Force machine learning predictions to satisfy the discretized equation}{
+        %Two consecutive snapshots are constrained to satisfied the governed equation (True Forward-Euler scheme) by
+        \begin{equation*}
+            \begin{aligned}
+                \frac{\textcolor{green}{\ut{i+1}} - \ut{i}}{\dt}                          & = \F \LRp{\ut{i}}                                                           \\
+                                                                                          & \Updownarrow                                                                \\
+                \underbrace{\ut{i} + \dt \Psi \LRp{\ut{i}}}_{\textcolor{green}{\ut{i+1}}} & = \underbrace{\ut{i} + \dt \F \LRp{\ut{i}}}_{\textcolor{blue}{\ubar{i+1}}}.
+            \end{aligned}
+        \end{equation*}
+        \myred{In practice} we approximately accomplish this  by minimizing $\MSE{\textcolor{green}{\ut{i+1}} - \textcolor{blue}{\ubar{i+1}}}$
+    }
+}
+
+

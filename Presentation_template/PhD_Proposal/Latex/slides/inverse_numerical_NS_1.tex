@@ -1,0 +1,33 @@
+\frame{
+\frametitle{2D Navier--Stokes equation}
+
+\vspace{-4ex}
+\begin{equation*}
+    \begin{aligned}
+        \partial_t \omega(x,t) + v(x,t) \cdot \nabla \omega(x,t) & = \nu \Delta \omega(x,t) + f(x), & \quad x \in \LRp{0,1}^2, t \in (0, T], \\
+        \nabla \cdot v(x,t)                                      & = 0,                             & \quad x \in \LRp{0,1}^2, t \in (0, T], \\
+        \omega(x,0)                                              & = u(x),                   & \quad x \in \LRp{0,1}^2,
+    \end{aligned}
+\end{equation*} 
+
+\begin{center}
+        \begin{figure}[htb!]
+            \begin{center}
+                \resizebox{.8\textwidth}{!}{
+                    \begin{tabular*}{\textwidth}{c@{\hskip -0.01cm} c@{\hskip -0.01cm} c@{\hskip -0.01cm} }
+                        \centering
+                        & Vorticity $u(x)$ at T = 0  & Vorticity $\omega(x)$ at T = 10 \\
+                        \raisebox{-0.5\height}{$\quad \quad \quad \quad \quad \quad $} &
+                        \raisebox{-0.5\height}{\includegraphics[width = 0.34\textwidth]{Figs/Figs/2D_NS/True_train_sample_POI_sample.pdf}} &
+                        \raisebox{-0.5\height}{\includegraphics[width = 0.34\textwidth]{Figs/Figs/2D_NS/True_train_sample_yobs_sample.pdf}}
+                    \end{tabular*}
+                }
+            \end{center}
+        \end{figure}
+\end{center}
+
+\myred{Forward problem:} Given initial vorticity $u(x)$, we aim to predict final vorticity $\omega(x)$ at T = 10.
+
+\myred{Inverse problem:} Given 20 observations at T = 10, we aim to reconstruct initial vorticity $u(x)$.
+
+}

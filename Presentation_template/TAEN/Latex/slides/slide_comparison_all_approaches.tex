@@ -1,0 +1,55 @@
+\frame{
+\frametitle{Summary of error estimation}
+\bluebox{Error estimation on test samples}
+{
+    % \begin{table}[htb!]
+    %     \centering
+    %     \resizebox{1.\textwidth}{!}{
+    %     \begin{tblr}{
+    %       width = 1.2\linewidth,
+    %       colspec = {X[c,m,1] X[c,m,1.4] X[c,m,2.2] X[c,m,1.4]},
+    %       cell{2}{3} = {r=2}{},
+    %       cell{4}{3} = {r=2}{},
+    %       vlines,
+    %       hline{1-2,4,6-7} = {-}{},
+    %       hline{3,5} = {1-2,4}{},
+    %     }
+    %     Approaches    & {PtO/forward error \\ $\epsb_{\ybtest}$/ $\epsb_{\ybfulltest}$} & {Inverse error \\  $\epsb_{\ubtest}$}                                                           & {Ability to learn \\ with 1 sample} \\
+    %     {\purePOP} & 0                         & $\nor{ \LRp{\bar{\P} \bar{\Y}^\dagger \GB -\Ib} \LRp{\ubtest - \bar{\ub}}}_2^2$   & None                            \\
+    %     {\pureOPO} & inevitably \textgreater{} 0           &                                                                                   & None                            \\
+    %     {\mcPOP}        & 0                         & $\le \nor{ \LRp{\bar{\P} \bar{\Y}^\dagger \GB -\Ib} \LRp{\ubtest - \bar{\ub}}}_2^2$ & Only PtO                            \\
+    %     {\mcOPO}        & 0                         &                                                                                   & Only forward                            \\
+    %     {\myred{\texttt{TAEN}}}        & 0                         & $\le \nor{{\ub^\text{test} - \ub_0}}_2^2$                                            & \myred{All}                           
+    %     \end{tblr}
+    %     }
+    % \end{table}
+
+    \begin{table}[htb!]
+        \centering
+       \resizebox{1.\textwidth}{!}{
+       \begin{tblr}{
+        width = 1.2\linewidth,
+        colspec = {X[c,m,1] X[c,m,1.4] X[c,m,2.2] X[c,m,1.4]},
+        vlines,
+        hline{1-2,3-5} = {-}{},
+        }
+        Approaches & {forward error \\ $\epsb_{\ybtest}$/ $\epsb_{\ybfulltest}$} & {Inverse error \\ $\epsb_{\ubtest}$} & {Ability to learn \\ with 1 sample $\yb$} \\
+        {\pureOPO} & inevitably \textgreater{} 0 & $\nor{ \LRp{\bar{\P} \bar{\Y}^\dagger \GB -\Ib} \LRp{\ubtest - \bar{\ub}}}_2^2$ & none \\
+        {\mcOPO} & 0 & $\le \nor{ \LRp{\bar{\P} \bar{\Y}^\dagger \GB -\Ib} \LRp{\ubtest - \bar{\ub}}}_2^2$ & only forward \\
+        {\myred{\texttt{TAEN}}} & 0 & $\le \nor{{\ub^\text{test} - \ub_0}}_2^2$ & {forward and inverse} \\
+       \end{tblr}
+        }
+       \end{table}
+
+    
+}
+\begin{itemize}
+    % \item With only one observation sample $\yb$, {\myred{\texttt{TAEN}}} can 
+    % \begin{itemize}
+    %     \item[-] learn exactly the forward map
+    %     \item[-] provide the best inverse solution error estimation.
+    % \end{itemize}
+    \item Please see our preprint for discussions for non-linear problems.
+\end{itemize}
+
+}

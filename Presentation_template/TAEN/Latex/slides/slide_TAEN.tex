@@ -1,0 +1,30 @@
+\frame{
+\frametitle{TAEN: Tikhonov Autoencoder Network Approach}
+{\small
+Recall the $\mcOPO$ loss functions
+\begin{equation*}
+    \begin{aligned}
+        \Psie^* = \min_{\Psie} & \halfv{1} \nor{{\mygreen\U} - \Psie\LRp{\Y}}_{F}^2 + \halfv{\lambda}\nor{\Y - \GB\LRp{\Psie\LRp{\Y}}}_{F}^2, \\ 
+        \Psid^* = \min_{\Psid} & \halfv{1} \nor{\G\LRp{\Psie^*\LRp{\Y}} -\Psid\LRp{\Psie^*\LRp{\Y}}}_{F}^2.
+    \end{aligned}
+\end{equation*}
+In TAEN, we use the prior mean of PoI, $\mygreen{\ub_0}$, thus true PoI samples are no longer required.
+\begin{equation*}
+    \begin{aligned}
+\Psie^* = \min_{\Psie} & \halfv{1} \nor{\mygreen{\ub_0 \One^T} - \Psie\LRp{\Y}}_{F}^2 + \halfv{\lambda}\nor{\Y - \B \circ \G\LRp{\Psie\LRp{\Y}}}_{F}^2, \\ 
+        \Psid^* = \min_{\Psid} & \halfv{1} \nor{\G\LRp{\Psie^*\LRp{\Y}} -\Psid\LRp{\Psie^*\LRp{\Y}}}_{F}^2.
+    \end{aligned}
+\end{equation*}
+Applying 1st optimality condition, and \myblue{\bf if $\bar{Y}$ is a full row rank}, we have 
+\begin{itemize}
+    \item \myred{test inverse solution error}
+        \[
+            \epsb_{\ubtest}^{\mcOPO} \leq  \nor{{\ub^\text{test} - {\ub}_0} }_2^2
+        \]
+    \item \myred{test forward solution error}
+        \[
+        \epsb_{\ybfulltest}^{\mcOPO} = 0, 
+        \]
+\end{itemize}
+}
+}

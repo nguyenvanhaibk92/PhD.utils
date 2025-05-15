@@ -1,0 +1,23 @@
+\frame{\frametitle{\texttt{mcTangent}}
+\framesubtitle{Naive machine learning}
+\vspace{-6ex}
+\bluebox{Consider forward Euler with the exact and approximate tangent slopes}{
+    \[
+        \ui{i+1} = \ui{i} + \dt \, \F \LRp{\ui{i}}, \quad \textcolor{green}{\ut{i+1}} = \ut{i} + \dt \NN{\ut{i}},
+    \]
+}
+    \vspace{2ex}
+    
+    \orangebox{Training with naive machine learning}{
+        \begin{itemize}
+            \item Learn the tangent slope $\F$
+                  \[
+                      \textcolor{green}{\ut{i+1}} = \ut{i} + \dt \NN{\ut{i}},
+                  \]
+                  % Forward Euler scheme takes care temporal evolution. Network approximates tangent slope (spatial derivatives) only.
+                  by  minimizing $\MSE{\textcolor{green}{\ut{i+1}} - \ui{i+1}}$.
+        \end{itemize}
+    }
+}
+
+
