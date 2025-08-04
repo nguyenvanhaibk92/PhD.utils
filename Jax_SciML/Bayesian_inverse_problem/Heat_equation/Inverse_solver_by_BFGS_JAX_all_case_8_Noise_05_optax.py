@@ -50,20 +50,20 @@ num_train = 10000
 num_test = 500
 
 
-train_input_file_name =  'poisson_2D_state_obs_train_o10_d' + str(num_train)+ '_n15_AC_1_1_pt5'
-train_output_file_name = 'poisson_2D_parameter_train_d' + str(num_train)+ '_n15_AC_1_1_pt5'
+# train_input_file_name =  'poisson_2D_state_obs_train_o10_d' + str(num_train)+ '_n15_AC_1_1_pt5'
+# train_output_file_name = 'poisson_2D_parameter_train_d' + str(num_train)+ '_n15_AC_1_1_pt5'
 test_input_file_name =   'poisson_2D_state_obs_test_o10_d' + str(num_test)+ '_n15_AC_1_1_pt5'
 test_output_file_name =  'poisson_2D_parameter_test_d' + str(num_test)+ '_n15_AC_1_1_pt5'
 
 
-df_train_Observations = pd.read_csv('data/' + train_input_file_name + '.csv') 
-df_train_Parameters = pd.read_csv('data/' + train_output_file_name + '.csv')
+# df_train_Observations = pd.read_csv('data/' + train_input_file_name + '.csv') 
+# df_train_Parameters = pd.read_csv('data/' + train_output_file_name + '.csv')
 df_test_Observations = pd.read_csv('data/' + test_input_file_name + '.csv') 
 df_test_Parameters = pd.read_csv('data/' + test_output_file_name + '.csv')
 
 
-train_Observations_synthetic = np.reshape(df_train_Observations.to_numpy(), (num_train,-1))
-train_Parameters = np.reshape(df_train_Parameters.to_numpy(), (num_train,-1))
+# train_Observations_synthetic = np.reshape(df_train_Observations.to_numpy(), (num_train,-1))
+# train_Parameters = np.reshape(df_train_Parameters.to_numpy(), (num_train,-1))
 test_Observations_synthetic = np.reshape(df_test_Observations.to_numpy(), (num_test,-1))
 test_Parameters = np.reshape(df_test_Parameters.to_numpy(), (num_test,-1))
 
