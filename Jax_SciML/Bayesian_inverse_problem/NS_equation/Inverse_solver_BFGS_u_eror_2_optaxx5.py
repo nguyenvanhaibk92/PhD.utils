@@ -52,18 +52,18 @@ num_observation = 20  # number of observed points
 dimension_of_PoI = (n)**2  # external force field
 num_truncated_series = 24
 
-train_input_file_name = 'Train_Observations' + str(num_train)
-train_output_file_name = 'Train_PoI_samples_d' + str(num_train)
+# train_input_file_name = 'Train_Observations' + str(num_train)
+# train_output_file_name = 'Train_PoI_samples_d' + str(num_train)
 test_input_file_name = 'Test_Observations' + str(num_test)
 test_output_file_name = 'Test_PoI_samples_d' + str(num_test)
 
-df_train_Observations = pd.read_csv('data/' + train_input_file_name + '.csv')
-df_train_Parameters = pd.read_csv('data/' + train_output_file_name + '.csv')
+# df_train_Observations = pd.read_csv('data/' + train_input_file_name + '.csv')
+# df_train_Parameters = pd.read_csv('data/' + train_output_file_name + '.csv')
 df_test_Observations = pd.read_csv('data/' + test_input_file_name + '.csv')
 df_test_Parameters = pd.read_csv('data/' + test_output_file_name + '.csv')
 
-train_Observations_synthetic = np.reshape(df_train_Observations.to_numpy(), (num_train, -1))
-train_Parameters = np.reshape(df_train_Parameters.to_numpy(), (num_train, -1))
+# train_Observations_synthetic = np.reshape(df_train_Observations.to_numpy(), (num_train, -1))
+# train_Parameters = np.reshape(df_train_Parameters.to_numpy(), (num_train, -1))
 test_Observations_synthetic = np.reshape(df_test_Observations.to_numpy(), (num_test, -1))
 test_Parameters = np.reshape(df_test_Parameters.to_numpy(), (num_test, -1))
 
